@@ -8,7 +8,6 @@
  * Factory in the consultaPagosApp.
  */
 angular.module('pagosService', [])
-angular.module('pagosService',[])
   .factory('pagosRequest', function ($http) {
     // Service logic
     // ...
