@@ -1,0 +1,48 @@
+<br>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        Consulta del Web Service
+    </div>
+    <div class="panel-body">
+
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Día:</label>
+        <input type="text" class="col-sm-2 control-label" ng-model="main.dia" name="dia" id="dia" required="true" placeholder="Ingrese el día">
+        <label class="col-sm-2 control-label">Mes:</label>
+        <input type="text" class="col-sm-2 control-label" ng-model="main.mes" name="dia" id="mes" required="true" placeholder="Ingrese el mes en número">
+        <label class="col-sm-2 control-label">Año:</label>
+        <input type="text" class="col-sm-2 control-label" ng-model="main.anio" name="dia" id="anio" required="true" placeholder="Ingrese el año">
+      </div>
+
+      <br>
+
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Rango inicio:</label>
+        <input type="text" class="col-sm-4 control-label" ng-model="main.rango_inicial" name="rango_inicial" id="rango_inicial" required="true" placeholder="Ingrese desde que dato desea consultar">
+        <label class="col-sm-2 control-label">Rango fin:</label>
+        <input type="text" class="col-sm-4 control-label" ng-model="main.rango_fin" name="rango_fin" id="rango_fin" required="true" placeholder="Ingrese hasta que dato desea consultar">
+      </div>
+
+      <br>
+
+          <div class="">
+            <button type="button" ng-disabled="main.dia == null || main.mes == null || main.anio== null" class="btn btn-primary" ng-click="main.consultarPagos()">Consultar</button>
+          </div>
+
+          <br>
+
+        <p>
+          Resultado consulta del Web Service
+        </p>
+
+        <div ng-if="main.rta!=null" class="alert alert-danger" >
+            <strong>Respuesta:</strong> {{main.rta}}
+        </div>
+
+        <div ng-if="main.pagos" ui-grid="main.gridOptions"></div>
+
+    </div>
+    <div class="panel-footer">
+        Panel Footer
+    </div>
+</div>
